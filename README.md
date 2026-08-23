@@ -158,53 +158,20 @@ The platform auto-selects the best-performing model and outputs bloom/NDVI forec
 
 Bloomee is built as a modular ecosystem of specialized repositories:
 
-### 📱 [bloomee-web](https://github.com/bloomee-app/bloomee-web)
-**Interactive Web Application** - Next.js frontend with 3D visualization
+| Repository | Purpose | Stack | 🤗 Hugging Face |
+|---|---|---|---|
+| 📱 [**bloomee-web**](https://github.com/bloomee-app/bloomee-web) | Interactive web app — 3D globe, time-series NDVI maps, regional detail panels | Next.js 14 · TypeScript · Three.js / React Three Fiber · MapLibre GL · Radix UI + Tailwind · Zustand | — |
+| 🤖 [**bloomee-ai**](https://github.com/bloomee-app/bloomee-ai) | NDVI prediction and multi-day bloom forecasting API | FastAPI · scikit-learn · ARIMA / SARIMA · Prophet · LSTM · Gradient Boosting · Random Forest | — |
+| 📓 [**bloomee-notebook**](https://github.com/bloomee-app/bloomee-notebook) | Earth Engine data pipeline, model training and validation | Jupyter · Google Earth Engine · geemap · Python | — |
+| 💬 [**bloomee-chatbot**](https://github.com/bloomee-app/bloomee-chatbot) | Self-hosted conversational agent — RAG over phenology literature plus live NDVI tool calls | Python 3.12 · LangGraph · FastAPI · Qdrant · Postgres · OpenRouter | — |
+| 🔁 [**bloomee-chatbot-dify**](https://github.com/bloomee-app/bloomee-chatbot-dify) | The original hosted chatflow the self-hosted service was ported from | Dify.ai · Gemini 2.5 Flash Lite · Perplexity AI | — |
+| 📚 [**bloomee-sft-nasasmd-grounded-5m**](https://github.com/bloomee-app/bloomee-sft-nasasmd-grounded-5m) | Fine-tuning corpus — 1,899 grounded, tool-calling conversations | JSONL in OpenAI chat format · ~5.03 M tokens | [**dataset**](https://huggingface.co/datasets/bloomee-app/bloomee-sft-nasasmd-grounded-5m) |
+| 🧩 [**bloomee-v1-clm-nasasmd-granite4.1-3b-adapter**](https://github.com/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b-adapter) | QLoRA adapter teaching Granite 4.1 3B to reach for the right NDVI tool | PEFT · QLoRA nf4 · 124 MB | [**model**](https://huggingface.co/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b-adapter) |
+| 🧠 [**bloomee-v1-clm-nasasmd-granite4.1-3b**](https://github.com/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b) | The same fine-tune as full merged weights — nothing to attach at load time | Transformers · safetensors fp16 · 6.35 GB | [**model**](https://huggingface.co/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b) |
 
-**Tech Stack:**
-- **Framework**: Next.js 14, TypeScript
-- **3D Rendering**: Three.js, React Three Fiber, React Three Drei
-- **UI Components**: Radix UI, Tailwind CSS, Framer Motion
-- **Mapping**: MapLibre GL, React Map GL
-- **Charts**: Recharts
-- **State Management**: Zustand
-- **Animation**: Anime.js
-
-### 🤖 [bloomee-ai](https://github.com/bloomee-app/bloomee-ai)
-**AI Forecasting Engine** - FastAPI backend with ML models
-
-**Tech Stack:**
-- **Framework**: FastAPI, Python
-- **Machine Learning**: Scikit-learn, NumPy, Pandas
-- **Time Series**: ARIMA, SARIMA, Prophet, LSTM
-- **Ensemble Methods**: Gradient Boosting, Random Forest
-- **API Server**: Uvicorn
-- **Data Processing**: SciPy, Joblib
-
-### 📓 [bloomee-notebook](https://github.com/bloomee-app/bloomee-notebook)
-**Research & Development** - Jupyter notebooks with model development
-
-**Purpose:**
-- Model training and validation
-- Feature engineering experiments
-- Algorithm performance comparison
-- Data analysis and visualization
-
-### 💬 [bloomee-chatbot](https://github.com/bloomee-app/bloomee-chatbot)
-**Conversational AI Assistant** - Dify.ai powered intelligent agent
-
-**Tech Stack:**
-- **Platform**: Dify.ai workflow automation
-- **LLM**: Google Gemini 2.5 Flash Lite
-- **Search Integration**: Perplexity AI
-- **Knowledge Base**: Vector embeddings with OpenAI text-embedding-3-small
-- **API Integration**: Custom NDVI prediction endpoints
-
-**Capabilities:**
-- Natural language NDVI queries
-- Regional bloom forecasting
-- Weather correlation analysis
-- Species identification assistance
+> **On the fine-tuned models:** they are self-hosting artifacts, not what the platform runs today.
+> `bloomee-chatbot` defaults to `ibm-granite/granite-4.1-8b` — the teacher the corpus was distilled
+> from — and the 3B fine-tune is a drop-in alternative for running the agent on your own hardware.
 
 ---
 
