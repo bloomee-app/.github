@@ -1,4 +1,20 @@
 <div align="center">
+  <table border="1">
+    <tr>
+      <td align="center" style="padding: 20px;">
+        <h3>📢 Domain & Email Migration Notice</h3>
+        <p>From <b>October 4 th, 2026</b>, Bloomee will transition to new domains as <code>bloomee.earth</code> will not be renewed:</p>
+        <p>🌐 <b>Website:</b> <a href="https://bloomee.faizath.com">bloomee.faizath.com</a> (formerly <i>bloomee.earth</i>)<br>
+        ⚙️ <b>AI Service:</b> <a href="https://bloomee-ai.faizath.com">bloomee-ai.faizath.com</a> (formerly <i>ai.bloomee.earth</i>)<br>
+        📧 <b>Email:</b> <a href="mailto:contact@bloomee.faizath.com">contact@bloomee.faizath.com</a> (formerly <i>contact@bloomee.earth</i>)<br>
+        📈 <b>Status Pages:</b> <a href="https://status.faizath.com/status/bloomee">https://status.faizath.com/status/bloomee</a> (formerly <i>status.bloomee.earth</i>)
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div align="center">
   <img src="assets/logo.png" alt="Bloomee Logo"/>
   
   # 🌸 Bloomee
@@ -7,10 +23,10 @@
   
   *Witness the pulse of life across our planet through space and time*
 
-  [![Web App](https://img.shields.io/badge/Web_App-bloomee.earth-green?style=for-the-badge&logo=earth&logoColor=white)](https://bloomee.earth/)
-  [![AI Platform](https://img.shields.io/badge/AI_Platform-ai.bloomee.earth-blue?style=for-the-badge&logo=robot&logoColor=white)](https://ai.bloomee.earth/)
-  [![Presentation](https://img.shields.io/badge/Presentation-PDF-red?style=for-the-badge&logo=adobe&logoColor=white)](https://cdn.bloomee.earth/deck.pdf)
-  [![Demo Video](https://img.shields.io/badge/Demo-YouTube-ff0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=5xR50jDX2gA)
+  [![Web App](https://img.shields.io/badge/Web_App-bloomee.faizath.com-green?style=for-the-badge&logo=earth&logoColor=white)](https://bloomee.faizath.com/)
+  [![AI Platform](https://img.shields.io/badge/AI_Platform-bloomee--ai.faizath.com-blue?style=for-the-badge&logo=robot&logoColor=white)](https://bloomee-ai.faizath.com/)
+  [![Presentation](https://img.shields.io/badge/Presentation-PDF-red?style=for-the-badge&logo=adobe&logoColor=white)](https://drive.google.com/file/d/1MKNiogopnmvyVNXW1oH9SlR7dV9IxzuT/preview)
+  [![Demo Video](https://img.shields.io/badge/Demo-YouTube-ff0000?style=for-the-badge&logo=youtube&logoColor=white)](https://drive.google.com/file/d/1uRHJuCOsljoKuxdpxp8OgjSraQDF4ZUH/preview)
 
   **🏆 NASA Space Apps Challenge 2025 Solution**
   
@@ -158,46 +174,30 @@ The platform auto-selects the best-performing model and outputs bloom/NDVI forec
 
 Bloomee is built as a modular ecosystem of specialized repositories:
 
-| Repository | Purpose | Stack | 🤗 Hugging Face |
-|---|---|---|---|
-| 📱 [**bloomee-web**](https://github.com/bloomee-app/bloomee-web) | Interactive web app — 3D globe, time-series NDVI maps, regional detail panels | Next.js 14 · TypeScript · Three.js / React Three Fiber · MapLibre GL · Radix UI + Tailwind · Zustand | — |
-| 🤖 [**bloomee-ai**](https://github.com/bloomee-app/bloomee-ai) | NDVI prediction and multi-day bloom forecasting API | FastAPI · scikit-learn · ARIMA / SARIMA · Prophet · LSTM · Gradient Boosting · Random Forest | — |
-| 📓 [**bloomee-notebook**](https://github.com/bloomee-app/bloomee-notebook) | Earth Engine data pipeline, model training and validation | Jupyter · Google Earth Engine · geemap · Python | — |
-| 💬 [**bloomee-chatbot**](https://github.com/bloomee-app/bloomee-chatbot) | Self-hosted conversational agent — RAG over phenology literature plus live NDVI tool calls | Python 3.12 · LangGraph · FastAPI · Qdrant · Postgres · OpenRouter | — |
-| 🔁 [**bloomee-chatbot-dify**](https://github.com/bloomee-app/bloomee-chatbot-dify) | The original hosted chatflow the self-hosted service was ported from | Dify.ai · Gemini 2.5 Flash Lite · Perplexity AI | — |
-| 📚 [**bloomee-sft-nasasmd-grounded-5m**](https://github.com/bloomee-app/bloomee-sft-nasasmd-grounded-5m) | Fine-tuning corpus — 1,899 grounded, tool-calling conversations | JSONL in OpenAI chat format · ~5.03 M tokens | [**dataset**](https://huggingface.co/datasets/bloomee-app/bloomee-sft-nasasmd-grounded-5m) |
-| 🧩 [**bloomee-v1-clm-nasasmd-granite4.1-3b-adapter**](https://github.com/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b-adapter) | QLoRA adapter teaching Granite 4.1 3B to reach for the right NDVI tool | PEFT · QLoRA nf4 · 124 MB | [**model**](https://huggingface.co/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b-adapter) |
-| 🧠 [**bloomee-v1-clm-nasasmd-granite4.1-3b**](https://github.com/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b) | The same fine-tune as full merged weights — nothing to attach at load time | Transformers · safetensors fp16 · 6.35 GB | [**model**](https://huggingface.co/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b) |
-
-> **On the fine-tuned models:** they are self-hosting artifacts, not what the platform runs today.
-> `bloomee-chatbot` defaults to `ibm-granite/granite-4.1-8b` — the teacher the corpus was distilled
-> from — and the 3B fine-tune is a drop-in alternative for running the agent on your own hardware.
-
----
-
-## 🌐 Deployment
-
-### Live Applications
-- **🌍 Web Platform**: [bloomee.earth](https://bloomee.earth/)
-- **🤖 AI API**: [ai.bloomee.earth](https://ai.bloomee.earth/)
-
-### 📋 Resources
-- **📊 Presentation Deck**: [cdn.bloomee.earth/deck.pdf](https://cdn.bloomee.earth/deck.pdf)
-- **🎥 Demo Video**: [YouTube Presentation](https://www.youtube.com/watch?v=5xR50jDX2gA)
+| Repository | Description | Tech Stack | Deployment / Model |
+| --- | --- | --- | --- |
+| 📱 [bloomee-web](https://github.com/bloomee-app/bloomee-web) | Interactive web application — 3D globe, time-series NDVI maps, and the in-app AI assistant. | Next.js 14, TypeScript, Three.js, React Three Fiber, React Three Drei, Radix UI, Tailwind CSS, Framer Motion, MapLibre GL, React Map GL, Recharts, Zustand, Anime.js | [bloomee.faizath.com](https://bloomee.faizath.com/) |
+| 🤖 [bloomee-ai](https://github.com/bloomee-app/bloomee-ai) | AI forecasting engine serving NDVI bloom predictions and multi-day forecasts. | FastAPI, Python, Uvicorn, Scikit-learn, NumPy, Pandas, SciPy, Joblib, ARIMA, SARIMA, Prophet, LSTM, Gradient Boosting, Random Forest | [bloomee-ai.faizath.com](https://bloomee-ai.faizath.com/) |
+| 📓 [bloomee-notebook](https://github.com/bloomee-app/bloomee-notebook) | Google Earth Engine data pipeline and research notebooks for model development and validation. | Jupyter, Python, Google Earth Engine, geemap, NumPy, Pandas, Matplotlib | — |
+| 💬 [bloomee-chatbot](https://github.com/bloomee-app/bloomee-chatbot) | Self-hosted agent answering phenology questions from RAG over remote-sensing literature plus live NDVI forecasts. | LangGraph, LangChain, FastAPI (SSE), Python 3.12, Qdrant, PostgreSQL, Docker, granite-4.1-8b via OpenRouter | [Live in web app](https://bloomee.faizath.com/) |
+| 💬 [bloomee-chatbot-dify](https://github.com/bloomee-app/bloomee-chatbot-dify) | Original conversational assistant built as a Dify.ai workflow over NDVI and weather context. | Dify.ai, Google Gemini 2.5 Flash Lite, Perplexity AI search, OpenAI `text-embedding-3-small` embeddings, custom NDVI prediction endpoints | — |
+| 🧠 [bloomee-v1-clm-nasasmd-granite4.1-3b](https://github.com/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b) | Granite 4.1 3B fine-tuned for phenology Q&A with NDVI tool calls — full merged weights. | Transformers, Safetensors, PyTorch, IBM Granite 4.1 3B | 🤗 [Model](https://hf.co/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b) |
+| 🧩 [bloomee-v1-clm-nasasmd-granite4.1-3b-adapter](https://github.com/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b-adapter) | QLoRA adapter teaching Granite 4.1 3B the same tool-calling phenology behaviour. | PEFT, LoRA / QLoRA, Safetensors, IBM Granite 4.1 3B | 🤗 [Model](https://hf.co/bloomee-app/bloomee-v1-clm-nasasmd-granite4.1-3b-adapter) |
+| 📚 [bloomee-sft-nasasmd-grounded-5m](https://github.com/bloomee-app/bloomee-sft-nasasmd-grounded-5m) | Supervised fine-tuning corpus of 1,899 grounded, tool-calling conversations distilled through the production agent graph. | SFT dataset, JSONL, tool-calling traces, distillation from the LangGraph agent | 🤗 [Dataset](https://hf.co/datasets/bloomee-app/bloomee-sft-nasasmd-grounded-5m) |
 
 ---
 
 ## 🚀 Getting Started
 
 ### Quick Demo
-Visit [bloomee.earth](https://bloomee.earth/) to explore:
+Visit [bloomee.faizath.com](https://bloomee.faizath.com/) to explore:
 1. **Navigate the 3D globe** to find regions of interest
 2. **Use the time slider** to observe seasonal changes
 3. **Click on bloom markers** to open detailed analysis
 4. **Ask the AI assistant** natural language questions about flowering patterns
 
 ### API Access
-The AI forecasting engine is available at [ai.bloomee.earth](https://ai.bloomee.earth/) with endpoints for:
+The AI forecasting engine is available at [bloomee-ai.faizath.com](https://bloomee-ai.faizath.com/) with endpoints for:
 - **Regional NDVI prediction**
 - **Multi-day bloom forecasting**
 - **Model performance metrics**
@@ -206,7 +206,8 @@ The AI forecasting engine is available at [ai.bloomee.earth](https://ai.bloomee.
 Each repository contains detailed setup instructions:
 - [`bloomee-web/README.md`](https://github.com/bloomee-app/bloomee-web) - Frontend development
 - [`bloomee-ai/README.md`](https://github.com/bloomee-app/bloomee-ai) - ML model deployment
-- [`bloomee-chatbot/README.md`](https://github.com/bloomee-app/bloomee-chatbot) - AI assistant configuration
+- [`bloomee-chatbot/README.md`](https://github.com/bloomee-app/bloomee-chatbot) - Self-hosted LangGraph agent setup
+- [`bloomee-chatbot-dify/README.md`](https://github.com/bloomee-app/bloomee-chatbot-dify) - Dify.ai workflow configuration
 
 ---
 
